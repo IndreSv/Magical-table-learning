@@ -1,0 +1,120 @@
+#topheader {
+    width: 100%;
+    background-color: #00b3b3;
+    height: 8em;
+    color: #e6ffff;
+    font-family: 'Work Sans', sans-serif;
+    position: sticky;
+}
+
+p {
+    font-size: .95em;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 3.5em;
+    position: relative;
+}
+
+body {
+    background-color: #c1f0f0;
+    font-family: 'Varela Round', sans-serif;
+    line-height: 1.6;
+    color: #3a3a3a;
+    text-align: justify;
+    ;
+    margin: 0 0;
+}
+
+form {
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.buttons {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-size: 1.5em;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 80%;
+    background-color: #b3cccc;
+    color: #009999;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+}
+
+.buttons:hover {
+    cursor: pointer;
+}
+
+tr {
+    height: 50px;
+    border: solid red 2px;
+}
+
+td {
+    width: 50px;
+    border: solid blue 1px;
+}
+
+table {
+    border: solid black 1px;
+}
+
+input[type="text"], input[type="number"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: solid #28a4a4 1px 20%;
+    font-size: 14px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 80%;
+    background-color: #d6f5f5;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 10px;
+  align-content: center;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+fieldset {
+  max-width: 90%;
+  text-align: center;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.errors {
+  text-align: left;
+  text-indent: 10%;
+  color: #a40000;
+  font-size: 12px;
+}
+
+/*Media Queries*/
+
+@media only screen and (min-width : 768px) {
+.buttons {
+  max-width: 30%;
+}
+input[type="text"], input[type="number"] {
+  max-width: 30%;
+}
+
+}
