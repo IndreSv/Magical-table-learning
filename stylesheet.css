@@ -62,12 +62,13 @@ tr {
 }
 
 td {
-    width: 50px;
-    border: solid blue 1px;
+    max-width: 100%;
+    border: solid black 1px;
 }
 
 table {
     border: solid black 1px;
+    width: 100%;
 }
 
 input[type="text"], input[type="number"] {
@@ -110,11 +111,26 @@ fieldset {
 /*Media Queries*/
 
 @media only screen and (min-width : 768px) {
-.buttons {
-  max-width: 30%;
+.buttons, input[type="text"], input[type="number"], label {
+  /*max-width: 30%;*/
+  /*display: inline-flex;*/
 }
-input[type="text"], input[type="number"] {
+
+fieldset {
+  display: inline-block;;
   max-width: 30%;
 }
 
+form {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  td:nth-child(1n+6) {
+    display: none;
+  }
 }

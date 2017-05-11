@@ -49,14 +49,16 @@ else if (row > 10000) {
         var text = document.getElementById("specificvalue").value;
         var chosenrow = document.getElementById("rowid").value;
         var chosencolumn = document.getElementById("columnid").value;
-        var table = document.getElementsByTagName("table")
+        var table = document.getElementsByTagName("table");
+        var allrows = document.getElementsByTagName("tr");
         if (table.length == 1) {
-            var selectedcell = table.rows[chosenrow].cells[chosencolumn];
+            var selectedrow = allrows[chosenrow-1];
+            var allcells = selectedrow.getElementsByTagName("td");
+          var selectedcell = allcells[chosencolumn-1];
             selectedcell.innerHTML = text;
         } else if (table.length == 0) {
             document.getElementById("notable").innerHTML="Please create a table before inserting values to it."
         } else {
-            window.alert("It seems that you have more than one table created. It is possible to add values only to one table.");
-//To be fixed
+            document.getElementById("toomanytables").innerHTML = "It seems that you have more than one table created. It is possible to add values only to one table."
         }
     }
