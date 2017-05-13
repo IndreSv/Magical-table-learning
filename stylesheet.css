@@ -1,21 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
 #topheader {
     width: 100%;
     background-color: #00b3b3;
-    height: 8em;
     color: #e6ffff;
     font-family: 'Work Sans', sans-serif;
     position: sticky;
+    line-height: 72px;
 }
 
 p {
     font-size: .95em;
+    text-indent: 1em;
+    max-width: 100%;
+}
+
+#description {
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 h1 {
     text-align: center;
     margin-top: 0;
-    font-size: 3.5em;
+    font-size: 36px;
     position: relative;
+    display: block;
 }
 
 body {
@@ -39,17 +51,18 @@ form {
     background: rgba(255, 255, 255, 0.1);
     border: none;
     font-size: 1.5em;
+    line-height: 2em;
     height: auto;
     margin: 0;
-    outline: 0;
-    padding: 15px;
-    width: 80%;
+    width: 100%;
     background-color: #b3cccc;
     color: #009999;
     font-weight: bold;
     text-align: center;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-    margin-bottom: 30px;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0 12px;
+    cursor: pointer;
 }
 
 .buttons:hover {
@@ -79,13 +92,12 @@ input[type="text"], input[type="number"] {
     margin: 0;
     outline: 0;
     padding: 15px;
-    width: 80%;
+    width: 100%;
     background-color: #d6f5f5;
     color: #8a97a0;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
     margin-bottom: 10px;
-  align-content: center;
-    box-sizing: border-box;
+    align-content: center;
 }
 
 label {
@@ -95,42 +107,48 @@ label {
 }
 
 fieldset {
-  max-width: 90%;
-  text-align: center;
-  margin-bottom: 10px;
-  border: none;
+    max-width: 90%;
+    text-align: center;
+    margin-bottom: 10px;
+    border: none;
 }
 
 .errors {
-  text-align: left;
-  text-indent: 10%;
-  color: #a40000;
-  font-size: 12px;
+    text-align: left;
+    text-indent: 10%;
+    color: #a40000;
+    font-size: 12px;
 }
+
+
+/*meta tag*/
+
+@-ms-viewport {
+    width: device-width;
+}
+
 
 /*Media Queries*/
 
-@media only screen and (min-width : 768px) {
-.buttons, input[type="text"], input[type="number"], label {
-  /*max-width: 30%;*/
-  /*display: inline-flex;*/
-}
-
-fieldset {
-  display: inline-block;;
-  max-width: 30%;
-}
-
-form {
-  margin: 0 0;
-  padding: 0 0;
-}
-
-
+@media only screen and (min-width: 769px) {
+    .buttons, input[type="text"], input[type="number"], label {
+        /*max-width: 30%;*/
+        /*display: inline-flex;*/
+    }
+    fieldset {
+        display: inline-block;
+        ;
+        width: 30%;
+        vertical-align: top;
+    }
+    form {
+        margin: 0 0;
+        padding: 0 0;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-  td:nth-child(1n+6) {
-    display: none;
-  }
+    td:nth-child(1n+6) {
+        display: none;
+    }
 }
