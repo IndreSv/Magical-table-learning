@@ -16,8 +16,7 @@ else if (row > 10000) {
         };
         createTable();
         for (let i = 0; i < row; i++) {
-            var newrow = document.createElement("tr");
-            table.appendChild(newrow);
+            table.innerHTML += "<tr>"
         }
         var allrows = document.getElementsByTagName("tr");
 
