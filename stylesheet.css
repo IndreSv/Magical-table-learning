@@ -30,6 +30,10 @@ h1 {
     display: block;
 }
 
+h2 {
+  text-align: center;
+}
+
 body {
     background-color: #c1f0f0;
     font-family: 'Varela Round', sans-serif;
@@ -75,13 +79,14 @@ tr {
 }
 
 td {
-    max-width: 100%;
+    word-break: break-all;
     border: solid black 1px;
 }
 
 table {
     border: solid black 1px;
     width: 100%;
+    table-layout: fixed;
 }
 
 input[type="text"], input[type="number"] {
@@ -109,9 +114,10 @@ label {
 fieldset {
     max-width: 90%;
     text-align: center;
-    margin-bottom: 10px;
+    margin: auto;
     border: none;
 }
+
 
 .errors {
     text-align: left;
