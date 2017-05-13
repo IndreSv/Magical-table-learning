@@ -1,6 +1,10 @@
+function clearvalues(element) {
+  element.value = '';
+}
+
 function addelements() {
     var row = document.getElementById("rows").value;
-    var column = document.getElementById("columns").value;
+    var column = document.getElementById("columns");
     var placefortable = document.getElementById("mydata");
     var table = document.createElement("table");
     if (column > 10) {
@@ -26,9 +30,11 @@ else if (row > 10000) {
                 allrows[i].appendChild(newcolumn);
             }
         }
-        for (let i = 0; i < column; i++) {
+        for (let i = 0; i < column.value; i++) {
             addColumns()
         }
+        clearvalues(rows);
+        clearvalues(column);
     }
   }
 
@@ -36,16 +42,17 @@ else if (row > 10000) {
 
 
     function addText() {
-        var text = document.getElementById("newtext").value;
+        var text = document.getElementById("newtext");
         var cell = document.getElementsByTagName("td");
         for (let i = 0; i <= cell.length; i++) {
-            cell[i].innerHTML += text;
+            cell[i].innerHTML += text.value;
         }
+        clearvalues(text);
     }
 
 
     function addToCell() {
-        var text = document.getElementById("specificvalue").value;
+        var text = document.getElementById("specificvalue");
         var chosenrow = document.getElementById("rowid").value;
         var chosencolumn = document.getElementById("columnid").value;
         var table = document.getElementsByTagName("table");
@@ -54,7 +61,8 @@ else if (row > 10000) {
             var selectedrow = allrows[chosenrow-1];
             var allcells = selectedrow.getElementsByTagName("td");
           var selectedcell = allcells[chosencolumn-1];
-            selectedcell.innerHTML = text;
+            selectedcell.innerHTML = text.value;
+            clearvalues(text);
         } else if (table.length == 0) {
             document.getElementById("notable").innerHTML="Please create a table before inserting values to it."
         } else {
