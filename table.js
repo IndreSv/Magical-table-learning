@@ -3,23 +3,29 @@ function clearvalues(element) {
 }
 
 function addelements() {
-    var row = document.getElementById("rows").value;
+    var row = document.getElementById("rows");
     var column = document.getElementById("columns");
     var placefortable = document.getElementById("mydata");
     var table = document.createElement("table");
-    sumrows = [];
+    var existingTable = document.getElementsByTagName("table");
+    var sumrows = [];
     if (column.value > 10) {
         document.getElementById("maxcolumn").innerHTML = "You can not insert more than 10 columns"
-    } else if (row > 10000) {
+    } else if (row.value > 10000) {
         document.getElementById("maxrows").innerHTML = "That's crazy! We can handle max 10 000 rows, sorry."
     } else {
+        if (existingTable.length > 0) {
+            for (var i = 0, len = existingTable.length; i != len; ++i) {
+                existingTable[0].parentNode.removeChild(existingTable[0]);
+            }
+        };
+
         function createTable() {
             placefortable.appendChild(table);
         };
         createTable();
-        for (let i = 0; i < row; i++) {
-            var createrows = "<tr>";
-            sumrows.push(createrows);
+        for (let i = 0; i < row.value; i++) {
+            sumrows.push("<tr>");
         }
         table.innerHTML = sumrows;
         var allrows = document.getElementsByTagName("tr");
@@ -33,21 +39,20 @@ function addelements() {
         for (let i = 0; i < column.value; i++) {
             addColumns()
         }
-        clearvalues(rows);
+
+        clearvalues(row);
         clearvalues(column);
     }
 }
 
 
-
-
 function addText() {
     var text = document.getElementById("newtext");
-    var cell = document.getElementsByTagName("td");
-    for (let i = 0; i <= cell.length; i++) {
-        cell[i].innerHTML += text.value;
+    var AllCells = document.getElementsByTagName("td");
+    for (let i = 0; i <= AllCells.length; i++) {
+        AllCells[i].innerHTML += text.value;
     }
-    clearvalues(text);
+    clearvalues(text.value);
 }
 
 
@@ -63,9 +68,7 @@ function addToCell() {
         var selectedcell = allcells[chosencolumn - 1];
         selectedcell.innerHTML = text.value;
         clearvalues(text);
-    } else if (table.length == 0) {
-        document.getElementById("notable").innerHTML = "Please create a table before inserting values to it."
     } else {
-        document.getElementById("toomanytables").innerHTML = "It seems that you have more than one table created. It is possible to add values only to one table."
+        document.getElementById("tablevalidation").innerHTML = "Please create a table before inserting values to it."
     }
 }
