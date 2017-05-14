@@ -7,7 +7,7 @@ function addelements() {
     var column = document.getElementById("columns");
     var placefortable = document.getElementById("mydata");
     var table = document.createElement("table");
-    if (column > 10) {
+    if (column.value > 10) {
 document.getElementById("maxcolumn").innerHTML="You can not insert more than 10 columns"
     }
 else if (row > 10000) {
