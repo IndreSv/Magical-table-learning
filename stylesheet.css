@@ -75,7 +75,7 @@ form {
 
 tr {
     height: 50px;
-    border: solid red 2px;
+    border: solid black 1px;
 }
 
 td {
@@ -85,8 +85,15 @@ td {
 
 table {
     border: solid black 1px;
-    width: 100%;
+    width: 95%;
     table-layout: fixed;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#mydata {
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 input[type="text"], input[type="number"] {
@@ -149,6 +156,7 @@ fieldset {
     form {
         margin: 0 0;
         padding: 0 0;
+        text-align: center;
     }
 }
 
