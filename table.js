@@ -1,14 +1,37 @@
-function clearvalues(element) {
+function clearValues(element) {
     element.value = '';
+}
+
+
+function createTable() {
+    var placefortable = document.getElementById("mydata");
+    var table = document.createElement("table");
+    placefortable.appendChild(table);
+};
+
+function addRows() {
+    var row = document.getElementById("rows");
+    var sumrows = [];
+    var existingTable = document.getElementsByTagName("table");
+    for (let i = 0; i < row.value; i++) {
+        sumrows.push("<tr>");
+    }
+    existingTable[0].innerHTML = sumrows;
+};
+
+function addColumns() {
+    var allrows = document.getElementsByTagName("tr");
+    for (let i = 0; i < allrows.length; i++) {
+        var newcolumn = document.createElement("td");
+        allrows[i].appendChild(newcolumn);
+    }
 }
 
 function addelements() {
     var row = document.getElementById("rows");
     var column = document.getElementById("columns");
-    var placefortable = document.getElementById("mydata");
     var table = document.createElement("table");
     var existingTable = document.getElementsByTagName("table");
-    var sumrows = [];
     if (column.value > 10) {
         document.getElementById("maxcolumn").innerHTML = "You can not insert more than 10 columns"
     } else if (row.value > 10000) {
@@ -19,29 +42,14 @@ function addelements() {
                 existingTable[0].parentNode.removeChild(existingTable[0]);
             }
         };
-
-        function createTable() {
-            placefortable.appendChild(table);
-        };
         createTable();
-        for (let i = 0; i < row.value; i++) {
-            sumrows.push("<tr>");
-        }
-        table.innerHTML = sumrows;
-        var allrows = document.getElementsByTagName("tr");
-
-        function addColumns() {
-            for (let i = 0; i < allrows.length; i++) {
-                var newcolumn = document.createElement("td");
-                allrows[i].appendChild(newcolumn);
-            }
-        }
+        addRows();
         for (let i = 0; i < column.value; i++) {
             addColumns()
-        }
+        };
 
-        clearvalues(row);
-        clearvalues(column);
+        clearValues(row);
+        clearValues(column);
     }
 }
 
@@ -52,7 +60,7 @@ function addText() {
     for (let i = 0; i <= AllCells.length; i++) {
         AllCells[i].innerHTML += text.value;
     }
-    clearvalues(text.value);
+    clearValues(text.value);
 }
 
 
@@ -67,7 +75,7 @@ function addToCell() {
         var allcells = selectedrow.getElementsByTagName("td");
         var selectedcell = allcells[chosencolumn - 1];
         selectedcell.innerHTML = text.value;
-        clearvalues(text);
+        clearValues(text);
     } else {
         document.getElementById("tablevalidation").innerHTML = "Please create a table before inserting values to it."
     }
