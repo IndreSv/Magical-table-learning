@@ -31,14 +31,13 @@ function addelements() {
     var row = document.getElementById("rows");
     var column = document.getElementById("columns");
     var table = document.createElement("table");
-    var existingTable = document.getElementsByTagName("table");
+        var existingTable = document.getElementsByTagName("table");
     if (column.value > 10) {
         document.getElementById("maxcolumn").innerHTML = "You can not insert more than 10 columns"
     } else if (row.value > 10000) {
         document.getElementById("maxrows").innerHTML = "That's crazy! We can handle max 10 000 rows, sorry."
     } else {
         if (existingTable.length > 0) {
-            for (var i = 0, len = existingTable.length; i != len; ++i) {
                 existingTable[0].parentNode.removeChild(existingTable[0]);
             }
         };
@@ -50,8 +49,7 @@ function addelements() {
 
         clearValues(row);
         clearValues(column);
-    }
-}
+    };
 
 
 function addText() {
