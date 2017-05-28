@@ -9,6 +9,15 @@ function createTable() {
     placefortable.appendChild(table);
 };
 
+
+
+function clearTable() {
+    var existingTable = document.getElementsByTagName("table");
+    if (existingTable.length > 0) {
+        existingTable[0].parentNode.removeChild(existingTable[0]);
+    }
+};
+
 function addRows() {
     var row = document.getElementById("rows");
     var sumrows = [];
@@ -31,25 +40,21 @@ function addelements() {
     var row = document.getElementById("rows");
     var column = document.getElementById("columns");
     var table = document.createElement("table");
-        var existingTable = document.getElementsByTagName("table");
     if (column.value > 10) {
         document.getElementById("maxcolumn").innerHTML = "You can not insert more than 10 columns"
     } else if (row.value > 10000) {
         document.getElementById("maxrows").innerHTML = "That's crazy! We can handle max 10 000 rows, sorry."
-    } else {
-        if (existingTable.length > 0) {
-                existingTable[0].parentNode.removeChild(existingTable[0]);
-            }
-        };
-        createTable();
-        addRows();
-        for (let i = 0; i < column.value; i++) {
-            addColumns()
-        };
-
-        clearValues(row);
-        clearValues(column);
     };
+    clearTable();
+    createTable();
+    addRows();
+    for (let i = 0; i < column.value; i++) {
+        addColumns()
+    };
+
+    clearValues(row);
+    clearValues(column);
+};
 
 
 function addText() {
