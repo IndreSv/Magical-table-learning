@@ -1,8 +1,8 @@
 function clearValues(element) {
     element.value = '';
-};
+}
 
-    var existingTable = document.getElementsByTagName("table");
+var existingTable = document.getElementsByTagName("table");
 
 function replaceTable() {
     var childs = document.getElementsByTagName("tr");
@@ -11,7 +11,7 @@ function replaceTable() {
             existingTable.removeChild(existingTable.firstChild);
         }
     }
-};
+}
 
 function addRows() {
     var row = document.getElementById("rows");
@@ -20,7 +20,7 @@ function addRows() {
         sumRows.push("<tr>");
     }
     existingTable[0].innerHTML = sumRows;
-};
+}
 
 function addColumns() {
     var allRows = document.getElementsByTagName("tr");
@@ -38,15 +38,14 @@ function addElements() {
     } else if (row.value > 10000) {
         document.getElementById("maxrows").innerHTML = "That's crazy! We can handle max 10 000 rows, sorry."
     };
-    replaceTable();
-    addRows();
+    replaceTable()
+    addRows()
     for (let i = 0; i < column.value; i++) {
         addColumns()
-    };
-
-    clearValues(row);
-    clearValues(column);
-};
+    }
+    clearValues(row)
+    clearValues(column)
+}
 
 function addText() {
     var text = document.getElementById("newtext");
