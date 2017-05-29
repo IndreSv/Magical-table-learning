@@ -58,7 +58,7 @@ form {
     width: 100%;
 }
 
-.buttons {
+button {
     background: rgba(255, 255, 255, 0.1);
     border: none;
     font-size: 1.5em;
@@ -76,7 +76,7 @@ form {
     cursor: pointer;
 }
 
-.buttons:hover {
+button:hover {
     cursor: pointer;
 }
 
@@ -144,7 +144,7 @@ fieldset {
 /*Media Queries*/
 
 @media only screen and (min-width: 769px) {
-    .buttons, input[type="text"], input[type="number"], label {
+    button, input[type="text"], input[type="number"], label {
         /*max-width: 30%;*/
         /*display: inline-flex;*/
     }
