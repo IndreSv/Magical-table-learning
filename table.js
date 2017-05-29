@@ -19,7 +19,8 @@ function addRows() {
     for (let i = 0; i < row.value; i++) {
         sumRows.push("<tr>");
     }
-    existingTable[0].innerHTML = sumRows;
+    var rowsToAdd = sumRows.join("");
+    existingTable[0].innerHTML = rowsToAdd;
 }
 
 function addColumns() {
