@@ -1,71 +1,74 @@
-function clearvalues(element) {
-  element.value = '';
+function clearValues(element) {
+    element.value = '';
 }
 
-function addelements() {
-    var row = document.getElementById("rows").value;
+var existingTable = document.getElementsByTagName("table");
+
+function replaceTable() {
+    var childs = document.getElementsByTagName("tr");
+    if (childs.length > 0) {
+        while (existingTable.firstChild) {
+            existingTable.removeChild(existingTable.firstChild);
+        }
+    }
+}
+
+function addRows() {
+    var row = document.getElementById("rows");
+    var sumRows = [];
+    for (let i = 0; i < row.value; i++) {
+        sumRows.push("<tr>");
+    }
+    var rowsToAdd = sumRows.join("");
+    existingTable[0].innerHTML = rowsToAdd;
+}
+
+function addColumns() {
+    var allRows = document.getElementsByTagName("tr");
+    for (let i = 0; i < allRows.length; i++) {
+        var newColumn = document.createElement("td");
+        allRows[i].appendChild(newColumn);
+    }
+}
+
+function addElements() {
+    var row = document.getElementById("rows");
     var column = document.getElementById("columns");
-    var placefortable = document.getElementById("mydata");
-    var table = document.createElement("table");
     if (column.value > 10) {
-document.getElementById("maxcolumn").innerHTML="You can not insert more than 10 columns"
+        document.getElementById("maxcolumn").innerHTML = "You can not insert more than 10 columns"
+    } else if (row.value > 10000) {
+        document.getElementById("maxrows").innerHTML = "That's crazy! We can handle max 10 000 rows, sorry."
+    };
+    replaceTable()
+    addRows()
+    for (let i = 0; i < column.value; i++) {
+        addColumns()
     }
-else if (row > 10000) {
-  document.getElementById("maxrows").innerHTML="That's crazy! We can handle max 10 000 rows, sorry."
+    clearValues(row)
+    clearValues(column)
 }
 
-    else {
-        function createTable() {
-            placefortable.appendChild(table);
-        };
-        createTable();
-        for (let i = 0; i < row; i++) {
-            table.innerHTML += "<tr>"
-        }
-        var allrows = document.getElementsByTagName("tr");
-
-        function addColumns() {
-            for (let i = 0; i < allrows.length; i++) {
-                var newcolumn = document.createElement("td");
-                allrows[i].appendChild(newcolumn);
-            }
-        }
-        for (let i = 0; i < column.value; i++) {
-            addColumns()
-        }
-        clearvalues(rows);
-        clearvalues(column);
+function addText() {
+    var text = document.getElementById("newtext");
+    var allCells = document.getElementsByTagName("td");
+    for (let i = 0; i <= allCells.length; i++) {
+        allCells[i].innerHTML += text.value;
     }
-  }
+    clearValues(text.value);
+}
 
-
-
-
-    function addText() {
-        var text = document.getElementById("newtext");
-        var cell = document.getElementsByTagName("td");
-        for (let i = 0; i <= cell.length; i++) {
-            cell[i].innerHTML += text.value;
-        }
-        clearvalues(text);
+function addToCell() {
+    var text = document.getElementById("specificvalue");
+    var chosenRow = document.getElementById("rowid").value;
+    var chosenColumn = document.getElementById("columnid").value;
+    var allRows = document.getElementsByTagName("tr");
+    if (allRows.length > 0) {
+        var selectedRow = allRows[chosenRow - 1];
+        var allCells = selectedRow.getElementsByTagName("td");
+        var selectedCell = allCells[chosenColumn - 1];
+        selectedCell.innerHTML = text.value;
+        clearValues(text);
+    } else {
+        document.getElementById("tablevalidation").innerHTML = "Please create a table before inserting values to it."
     }
-
-
-    function addToCell() {
-        var text = document.getElementById("specificvalue");
-        var chosenrow = document.getElementById("rowid").value;
-        var chosencolumn = document.getElementById("columnid").value;
-        var table = document.getElementsByTagName("table");
-        var allrows = document.getElementsByTagName("tr");
-        if (table.length == 1) {
-            var selectedrow = allrows[chosenrow-1];
-            var allcells = selectedrow.getElementsByTagName("td");
-          var selectedcell = allcells[chosencolumn-1];
-            selectedcell.innerHTML = text.value;
-            clearvalues(text);
-        } else if (table.length == 0) {
-            document.getElementById("notable").innerHTML="Please create a table before inserting values to it."
-        } else {
-            document.getElementById("toomanytables").innerHTML = "It seems that you have more than one table created. It is possible to add values only to one table."
-        }
-    }
+}

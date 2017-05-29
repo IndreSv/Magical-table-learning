@@ -22,6 +22,13 @@ p {
     padding-right: 6px;
 }
 
+
+.errors {
+    text-align: left;
+    color: #a40000;
+    font-size: 12px;
+}
+
 h1 {
     text-align: center;
     margin-top: 0;
@@ -51,7 +58,7 @@ form {
     width: 100%;
 }
 
-.buttons {
+button {
     background: rgba(255, 255, 255, 0.1);
     border: none;
     font-size: 1.5em;
@@ -69,24 +76,32 @@ form {
     cursor: pointer;
 }
 
-.buttons:hover {
+button:hover {
     cursor: pointer;
+}
+
+tr, td, table {
+  border: solid thin black;
 }
 
 tr {
     height: 50px;
-    border: solid red 2px;
 }
 
 td {
     word-break: break-all;
-    border: solid black 1px;
 }
 
 table {
-    border: solid black 1px;
-    width: 100%;
+    width: 95%;
     table-layout: fixed;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#mydata {
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 input[type="text"], input[type="number"] {
@@ -119,13 +134,6 @@ fieldset {
 }
 
 
-.errors {
-    text-align: left;
-    color: #a40000;
-    font-size: 12px;
-}
-
-
 /*meta tag*/
 
 @-ms-viewport {
@@ -136,7 +144,7 @@ fieldset {
 /*Media Queries*/
 
 @media only screen and (min-width: 769px) {
-    .buttons, input[type="text"], input[type="number"], label {
+    button, input[type="text"], input[type="number"], label {
         /*max-width: 30%;*/
         /*display: inline-flex;*/
     }
@@ -149,6 +157,7 @@ fieldset {
     form {
         margin: 0 0;
         padding: 0 0;
+        text-align: center;
     }
 }
 
