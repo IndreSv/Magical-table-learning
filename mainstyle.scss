@@ -1,5 +1,8 @@
-@import 'scss/buttons', 'scss/layout', 'scss/mixins', 'scss/variables';
-$color-primary: #e6ffff;
+@import 'scss/variables';
+@import 'scss/buttons';
+@import 'scss/layout';
+@import 'scss/mixins';
+
 
 * {
     box-sizing: border-box;
