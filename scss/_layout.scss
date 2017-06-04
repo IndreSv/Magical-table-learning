@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+#topheader {
+    width: 100%;
+    background-color: #00b3b3;
+    color: $color-primary;
+    font-family: 'Work Sans', sans-serif;
+    position: sticky;
+    line-height: 72px;
+}
+
+p {
+    font-size: 0.95em;
+    text-indent: 1em;
+    max-width: 100%;
+}
+
+#description {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.errors {
+    text-align: left;
+    color: #a40000;
+    font-size: 12px;
+}
+
+h1 {
+    @include centered-items;
+    font-size: 36px;
+    position: relative;
+    display: block;
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    background-color: #c1f0f0;
+    font-family: 'Varela Round', sans-serif;
+    line-height: 1.6;
+    color: #3a3a3a;
+    text-align: justify;
+    margin: 0;
+}
+
+form {
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+
+    fieldset {
+        @include centered-items;
+        max-width: 90%;
+        border: none;
+    }
+}
+
+table,
+td,
+tr {
+    border: solid thin black;
+}
+
+table {
+    width: 95%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: auto;
+
+    tr {
+        height: 50px;
+    }
+
+    td {
+        word-break: break-all;
+    }
+}
+
+#mydata {
+    @include centered-items;
+}
+
+input[type="number"],
+input[type="text"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: solid #28a4a4 1px 20%;
+    font-size: 14px;
+    height: auto;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #d6f5f5;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 10px;
+    align-content: center;
+}
+
+label {
+    display: block;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+/*meta tag*/
+@-ms-viewport {
+    width: device-width;
+}
+/*Media Queries*/
+@media only screen and (min-width: 769px) {
+    button,
+    input[type="number"],
+    input[type="text"],
+    label {
+        /*max-width: 30%;*/
+        /*display: inline-flex;*/
+    }
+
+    form {
+        @include centered-items;
+        padding: 0;
+
+        fieldset {
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    td:nth-child(1n+6) {
+        display: none;
+    }
+}

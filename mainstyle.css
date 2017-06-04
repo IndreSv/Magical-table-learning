@@ -1,3 +1,22 @@
+button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 1.5em;
+  line-height: 2em;
+  height: auto;
+  margin: 0;
+  width: 100%;
+  background-color: #b3cccc;
+  color: #009999;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 0 12px;
+  cursor: pointer; }
+  button:hover {
+    cursor: pointer; }
+
 * {
   box-sizing: border-box; }
 
@@ -25,7 +44,7 @@ p {
 
 h1 {
   text-align: center;
-  margin-top: 0;
+  margin: auto;
   font-size: 36px;
   position: relative;
   display: block; }
@@ -47,29 +66,10 @@ form {
   border-radius: 8px;
   width: 100%; }
   form fieldset {
-    max-width: 90%;
     text-align: center;
     margin: auto;
+    max-width: 90%;
     border: none; }
-
-button {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  font-size: 1.5em;
-  line-height: 2em;
-  height: auto;
-  margin: 0;
-  width: 100%;
-  background-color: #b3cccc;
-  color: #009999;
-  font-weight: bold;
-  text-align: center;
-  display: inline-block;
-  border-radius: 4px;
-  padding: 0 12px;
-  cursor: pointer; }
-  button:hover {
-    cursor: pointer; }
 
 table,
 td,
@@ -88,7 +88,7 @@ table {
 
 #mydata {
   text-align: center;
-  margin-bottom: 5px; }
+  margin: auto; }
 
 input[type="number"],
 input[type="text"] {
@@ -96,7 +96,6 @@ input[type="text"] {
   border: solid #28a4a4 1px 20%;
   font-size: 14px;
   height: auto;
-  margin: 0;
   outline: 0;
   padding: 15px;
   width: 100%;
@@ -124,9 +123,9 @@ label {
     /*display: inline-flex;*/ }
 
   form {
-    margin: 0;
-    padding: 0;
-    text-align: center; }
+    text-align: center;
+    margin: auto;
+    padding: 0; }
     form fieldset {
       display: inline-block;
       width: 30%;
