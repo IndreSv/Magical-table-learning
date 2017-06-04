@@ -1,3 +1,4 @@
+@import 'scss/buttons', 'scss/layout', 'scss/mixins', 'scss/variables';
 $color-primary: #e6ffff;
 
 * {
@@ -14,7 +15,7 @@ $color-primary: #e6ffff;
 }
 
 p {
-    font-size: .95em;
+    font-size: 0.95em;
     text-indent: 1em;
     max-width: 100%;
 }
@@ -23,7 +24,6 @@ p {
     padding-left: 6px;
     padding-right: 6px;
 }
-
 
 .errors {
     text-align: left;
@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-  text-align: center;
+    text-align: center;
 }
 
 body {
@@ -49,8 +49,7 @@ body {
     line-height: 1.6;
     color: #3a3a3a;
     text-align: justify;
-    ;
-    margin: 0 0;
+    margin: 0;
 }
 
 form {
@@ -58,6 +57,7 @@ form {
     padding: 10px 20px;
     border-radius: 8px;
     width: 100%;
+
     fieldset {
         max-width: 90%;
         text-align: center;
@@ -82,15 +82,16 @@ button {
     border-radius: 4px;
     padding: 0 12px;
     cursor: pointer;
+
     &:hover {
         cursor: pointer;
     }
 }
 
-
-
-tr, td, table {
-  border: solid thin black;
+table,
+td,
+tr {
+    border: solid thin black;
 }
 
 table {
@@ -98,20 +99,23 @@ table {
     table-layout: fixed;
     border-collapse: collapse;
     margin: auto;
+
     tr {
         height: 50px;
     }
+
     td {
         word-break: break-all;
     }
 }
 
 #mydata {
-  text-align: center;
-  margin-bottom: 5px;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
-input[type="text"], input[type="number"] {
+input[type="number"],
+input[type="text"] {
     background: rgba(255, 255, 255, 0.1);
     border: solid #28a4a4 1px 20%;
     font-size: 14px;
@@ -132,36 +136,32 @@ label {
     padding-bottom: 4px;
     padding-top: 4px;
 }
-
-
 /*meta tag*/
-
 @-ms-viewport {
     width: device-width;
 }
-
-
 /*Media Queries*/
-
 @media only screen and (min-width: 769px) {
-    button, input[type="text"], input[type="number"], label {
+    button,
+    input[type="number"],
+    input[type="text"],
+    label {
         /*max-width: 30%;*/
         /*display: inline-flex;*/
     }
 
     form {
-        margin: 0 0;
-        padding: 0 0;
+        margin: 0;
+        padding: 0;
         text-align: center;
+
         fieldset {
             display: inline-block;
-            ;
             width: 30%;
             vertical-align: top;
         }
     }
 }
-
 @media only screen and (max-width: 768px) {
     td:nth-child(1n+6) {
         display: none;
