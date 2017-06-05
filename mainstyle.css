@@ -65,16 +65,30 @@ form {
   padding: 10px 20px;
   border-radius: 8px;
   width: 100%; }
+  @media (min-width: 769px) {
+    form {
+      text-align: center;
+      margin: auto;
+      padding: 0; } }
   form fieldset {
     text-align: center;
     margin: auto;
     max-width: 90%;
     border: none; }
+    @media (min-width: 769px) {
+      form fieldset {
+        display: inline-block;
+        width: 30%;
+        vertical-align: top; } }
 
 table,
 td,
 tr {
   border: solid thin black; }
+
+@media (max-width: 768px) {
+  td:nth-child(1n+6) {
+    display: none; } }
 
 table {
   width: 95%;
@@ -113,25 +127,5 @@ label {
 /*meta tag*/
 @-ms-viewport {
   width: device-width; }
-/*Media Queries*/
-@media only screen and (min-width: 769px) {
-  button,
-  input[type="number"],
-  input[type="text"],
-  label {
-    /*max-width: 30%;*/
-    /*display: inline-flex;*/ }
-
-  form {
-    text-align: center;
-    margin: auto;
-    padding: 0; }
-    form fieldset {
-      display: inline-block;
-      width: 30%;
-      vertical-align: top; } }
-@media only screen and (max-width: 768px) {
-  td:nth-child(1n+6) {
-    display: none; } }
 
 /*# sourceMappingURL=mainstyle.css.map */
