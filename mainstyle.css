@@ -1,22 +1,3 @@
-button {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  font-size: 1.5em;
-  line-height: 2em;
-  height: auto;
-  margin: 0;
-  width: 100%;
-  background-color: #b3cccc;
-  color: #009999;
-  font-weight: bold;
-  text-align: center;
-  display: inline-block;
-  border-radius: 4px;
-  padding: 0 12px;
-  cursor: pointer; }
-  button:hover {
-    cursor: pointer; }
-
 * {
   box-sizing: border-box; }
 
@@ -106,7 +87,6 @@ table {
 
 input[type="number"],
 input[type="text"] {
-  background: rgba(255, 255, 255, 0.1);
   border: solid #28a4a4 1px 20%;
   font-size: 14px;
   height: auto;
@@ -119,10 +99,25 @@ input[type="text"] {
   margin-bottom: 10px;
   align-content: center; }
 
+button {
+  text-align: center;
+  margin: auto;
+  border: none;
+  font-size: 1.5em;
+  line-height: 2em;
+  height: auto;
+  width: 100%;
+  background-color: #558C89;
+  color: #e6ffff;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 0 12px; }
+  button:hover {
+    cursor: pointer; }
+
 label {
   display: block;
-  padding-bottom: 4px;
-  padding-top: 4px; }
+  padding: 4px 0; }
 
 /*meta tag*/
 @-ms-viewport {

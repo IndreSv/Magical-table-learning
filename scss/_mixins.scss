@@ -3,6 +3,20 @@
   margin: auto;
 }
 
+@mixin input-fields-styling {
+  border: solid #28a4a4 1px 20%;
+  font-size: 14px;
+  height: auto;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #d6f5f5;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 10px;
+  align-content: center;
+}
+
 @mixin mobile {
   @media (max-width: #{$desktop-width - 1px}) {
     @content;
