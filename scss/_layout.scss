@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+#topheader {
+    width: 100%;
+    background-color: $color-header-background;
+    color: $color-header;
+    font-family: 'Work Sans', sans-serif;
+    position: sticky;
+    line-height: 72px;
+}
+
+p {
+    font-size: 0.95em;
+    text-indent: 1em;
+    max-width: 100%;
+}
+
+#description {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.errors {
+    text-align: left;
+    color: $color-errors;
+    font-size: 12px;
+}
+
+h1 {
+    @include centered-items;
+    font-size: 36px;
+    position: relative;
+    display: block;
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    background-color: $background-primary;
+    font-family: 'Varela Round', sans-serif;
+    line-height: 1.6;
+    color: $color-primary;
+    text-align: justify;
+    margin: 0;
+}
+
+form {
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+    @include desktop {
+         @include centered-items;
+        padding: 0;
+    }
+
+    fieldset {
+        @include centered-items;
+        max-width: 90%;
+        border: none;
+        @include desktop {
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+        }
+    }
+}
+
+table,
+td,
+tr {
+    border: solid thin black;
+}
+
+td:nth-child(1n+6) {
+  @include mobile {
+    display: none;
+  }
+}
+
+table {
+    width: 95%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: auto;
+
+    tr {
+        height: 50px;
+    }
+
+    td {
+        word-break: break-all;
+    }
+}
+
+#mydata {
+    @include centered-items;
+}
+
+input[type="number"],
+input[type="text"] {
+@include input-fields-styling;
+}
+
+button {
+    @include centered-items;
+    border: none;
+    font-size: 1.5em;
+    line-height: 2em;
+    height: auto;
+    width: 100%;
+    background-color: $background-buttons;
+    color: $color-header;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0 12px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+label {
+    display: block;
+    padding: 4px 0;
+}
+/*meta tag*/
+@-ms-viewport {
+    width: device-width;
+}
